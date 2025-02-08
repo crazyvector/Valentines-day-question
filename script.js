@@ -2,22 +2,22 @@
 
 // Function to spawn flying images when clicking "Yes"
 function spawnFlyingImages() {
-    for (let i = 0; i < 10; i++) { // Generate 10 flying images
+    for (let i = 0; i < 10; i++) { // Generate 5 flying images
         let img = document.createElement("img");
-        img.src = "image.png"; // Your image file
+        img.src = "image.jpeg"; // Your image file
         img.classList.add("flying-image");
 
-        // Set random position near the bottom of the screen
+        // Set random position
         img.style.left = Math.random() * window.innerWidth + "px";
-        img.style.top = window.innerHeight - 100 + "px"; // Start near the bottom
+        img.style.top = Math.random() * window.innerHeight + "px";
 
         // Append to body
         document.body.appendChild(img);
 
-        // Remove after 3 seconds
+        // Remove after 1.5 seconds
         setTimeout(() => {
             img.remove();
-        }, 3000);
+        }, 1500);
     }
 }
 
