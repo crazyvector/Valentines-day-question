@@ -1,82 +1,90 @@
 /* style.css */
 
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    background-color: #FADADD;
-    overflow: hidden; /* Previne scrollbar-ul când imaginile zboară */
+    font-family: Arial, sans-serif; /* Fallback font family */
+    text-align: center; /* Center-align text */
+    margin: 0; /* Remove default margin */
+    background-color: #FADADD; /* Set background color to light pink */
 }
 
 #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+    height: 100vh; /* Make the container full viewport height */
 }
 
 #image-container {
-    /* Container pentru imagini */
+    /* This container will hold the images */
 }
 
 #question {
-    font-family: 'Sacramento', cursive;
-    font-size: 52px;
+    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
+    font-size: 52px; /* Set font size for the question */
 }
 
 #options {
-    margin-top: 20px;
+    margin-top: 20px; /* Add space above the options */
 }
 
 button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 26px;
-    font-family: 'Sacramento', cursive;
-    background-color: #FB607F;
-    color: white;
-    border: none;
-    cursor: pointer;
+    padding: 10px 20px; /* Set padding for buttons */
+    margin: 0 10px; /* Set margin around buttons */
+    font-size: 26px; /* Set font size for buttons */
+    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
+    background-color: #FB607F; /* Set button background color */
+    color: white; /* Set text color to white */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Set cursor to pointer on hover */
 }
 
 .flying-image {
     position: absolute;
-    width: 150px; /* Dimensiune mărită la 150px */
+    width: 100px; /* Small size */
     height: auto;
     opacity: 1;
-    animation: flyRandom 3s ease-out;
+    transition: transform 1s ease-out, opacity 1.5s ease-out;
+    animation: flyUp 1.5s linear;
 }
 
-@keyframes flyRandom {
+@keyframes flyUp {
     from {
-        transform: translate(0, 0) rotate(0deg);
+        transform: translateY(0) rotate(0deg) scale(1);
         opacity: 1;
     }
     to {
-        transform: translate(calc(-200px + 400px * random()), calc(-200px + 400px * random())) rotate(90deg);
+        transform: translateY(-150px) rotate(720deg) scale(0.5);
         opacity: 0;
     }
 }
 
-/* GIF pe tot ecranul când apesi "Nu" */
+/* Fullscreen GIF */
 .fullscreen-gif {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
     width: 100vw;
     height: 100vh;
-    object-fit: contain;
-    background-color: black;
+    object-fit: contain; /* Asigură că întreaga imagine se vede */
+    background-color: black; /* Fundal negru pentru contrast */
     z-index: 1000;
     animation: growFadeOut 2s ease-out;
 }
 
+
 @keyframes growFadeOut {
     0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
     100% {
+        transform: translate(-50%, -50%) scale(1);
         opacity: 0;
     }
 }
