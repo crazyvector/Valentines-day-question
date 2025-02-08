@@ -50,11 +50,11 @@ button {
 
 @keyframes flyUp {
     from {
-        transform: translateY(0) rotate(0deg) scale(1);
+        transform: translateY(0) scale(1);
         opacity: 1;
     }
     to {
-        transform: translateY(-150px) rotate(720deg) scale(0.5);
+        transform: translateY(-150px) scale(0.5);
         opacity: 0;
     }
 }
@@ -72,7 +72,6 @@ button {
     z-index: 1000;
     animation: growFadeOut 2s ease-out;
 }
-
 
 @keyframes growFadeOut {
     0% {
