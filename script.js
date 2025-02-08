@@ -2,7 +2,7 @@
 
 // Function to spawn flying images when clicking "Yes"
 function spawnFlyingImages() {
-    for (let i = 0; i < 5; i++) { // Generate 5 flying images
+    for (let i = 0; i < 10; i++) { // Generate 5 flying images
         let img = document.createElement("img");
         img.src = "image.jpeg"; // Your image file
         img.classList.add("flying-image");
