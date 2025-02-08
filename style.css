@@ -67,10 +67,12 @@ button {
     transform: translate(-50%, -50%) scale(0);
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
+    object-fit: contain; /* Asigură că întreaga imagine se vede */
+    background-color: black; /* Fundal negru pentru contrast */
     z-index: 1000;
     animation: growFadeOut 2s ease-out;
 }
+
 
 @keyframes growFadeOut {
     0% {
